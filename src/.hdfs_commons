@@ -1,0 +1,6 @@
+export HADOOP_HOME=/home/hadoop
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH=$PATH:$HADOOP_HOME/bin
+
+service ssh start
+/home/hadoop/sbin/start-dfs.sh
