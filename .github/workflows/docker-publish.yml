@@ -85,7 +85,6 @@ jobs:
           short-description: ${{ github.event.repository.description }}
           readme-filepath: README.md
 
-
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
       # repository is public to avoid leaking data.  If you would like to publish
