@@ -14,14 +14,16 @@ Hadoop Pseudo Distributed File System. Do not use for production!!
 - HDFS datanode http-address -> 9864
 
 ## Usage
+![Demo](/media/Docker-HDFS-Usage.gif)
+
 ### quick start
 ```
-docker run -d -p 9000:9000/tcp -p 9864:9864/tcp -p 9870:9870/tcp veedata/hdfs-pseudodistributed:latest
+docker run -dit -p 9000:9000/tcp -p 9864:9864/tcp -p 9870:9870/tcp veedata/hdfs-pseudodistributed:latest
 ```
 Then browser to [localhost:9870](http://localhost:9870) to see HDFS WebUI
 
 ### changing port
 eg: changing UI port on host from 9870 to 9800
 ```
-docker run -d -p 9000:9000/tcp -p 9864:9864/tcp -p 9800:9870/tcp veedata/hdfs-pseudodistributed:latest
+docker run -dit -p 9000:9000/tcp -p 9864:9864/tcp -p 9800:9870/tcp veedata/hdfs-pseudodistributed:latest
 ```
