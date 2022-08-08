@@ -27,17 +27,19 @@ COPY src/hdfs-site.xml /home/hadoop/etc/hadoop/hdfs-site.xml
 COPY src/core-site.xml /home/hadoop/etc/hadoop/core-site.xml
 COPY src/start-dfs.sh /home/hadoop/sbin/start-dfs.sh
 COPY src/stop-dfs.sh /home/hadoop/sbin/stop-dfs.sh
-COPY src/.hdfs_commons /home/.hdfs_commons
+COPY src/startup.sh /home/startup.sh
 
 EXPOSE 9000
 EXPOSE 9870
 EXPOSE 9864
 
 RUN \
-    echo "source /home/.hdfs_commons" >> ~/.bashrc && \
     export HADOOP_HOME=/home/hadoop && \
     export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64 && \
     export PATH=$PATH:$HADOOP_HOME/bin && \
     service ssh start && \
+    chmod +x /home/hadoop/sbin/* && \
     hdfs namenode -format && \
     rm -rf /var/lib/apt/lists/*
+
+CMD /bin/bash -c '/home/startup.sh -d'
