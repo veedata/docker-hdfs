@@ -39,6 +39,7 @@ RUN \
     export PATH=$PATH:$HADOOP_HOME/bin && \
     service ssh start && \
     chmod +x /home/hadoop/sbin/* && \
+    chmod +x /home/startup.sh && \
     hdfs namenode -format && \
     rm -rf /var/lib/apt/lists/*
 
