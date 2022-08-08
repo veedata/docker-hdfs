@@ -23,11 +23,11 @@
      </property>
      <property>
          <name>dfs.namenode.name.dir</name>
-         <value>/data/viraj/hadoopdata/rhdfsname</value>
+         <value>/home/hadoopdata/namenode</value>
      </property>
      <property>
          <name>dfs.datanode.data.dir</name>
-         <value>/data/viraj/hadoopdata/rhdfsdata</value>
+         <value>/home/hadoopdata/datanode</value>
      </property>
      <property>
          <name>dfs.permissions</name>
